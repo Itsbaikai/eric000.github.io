@@ -33,8 +33,10 @@ mclose.onclick = function () {
     mmain.style.display = "none";
 }
 
-// 切换颜色
-let change = document.getElementById("theme-change-btn")
+// 获取主题切换按钮元素
+let change = document.getElementById("theme-change-btn");
+
+// 定义主题列表
 let changeList = [
     {
         text: "白昼",
@@ -52,23 +54,36 @@ let changeList = [
         text: "森林",
         code: "forest"
     }
-]
-var currentIndex = 0
-change.onclick = function (){
-    console.log("you click change theme btn and currentIndex = " + currentIndex)
+];
+
+// 初始化当前主题索引
+var currentIndex = 0;
+
+// 设置切换按钮点击事件处理函数
+change.onclick = function () {
+    console.log("You clicked change theme button and currentIndex = " + currentIndex);
+
+    // 更新当前主题索引
     currentIndex = (currentIndex + 1) % changeList.length;
+
+    // 更新按钮显示文本和页面主题类名
     this.innerHTML = changeList[currentIndex].text;
     document.body.className = changeList[currentIndex].code;
-    // 将状态存入缓存中
-    localStorage.setItem('hexo-white-theme-mode', changeList[currentIndex].code);
-}
 
-let beginCode = localStorage.getItem('hexo-white-theme-mode') || "cookie" // day是默认
-let tmpElement = changeList.filter(item => item.code === beginCode)[0]
-change.innerHTML = tmpElement.text
-currentIndex = changeList.indexOf(tmpElement)
-document.body.className = tmpElement.code
-localStorage.setItem('hexo-white-theme-mode', tmpElement.code);
+    // 将当前主题代码存入 localStorage 中
+    localStorage.setItem('hexo-white-theme-mode', changeList[currentIndex].code);
+};
+
+// 初始化主题按钮显示文本、页面主题类名和 localStorage 中存储的主题代码
+document.addEventListener('DOMContentLoaded', function() {
+    let beginCode = localStorage.getItem('hexo-white-theme-mode') || "cookie"; // 默认主题为 "cookie"
+    let tmpElement = changeList.find(item => item.code === beginCode); // 查找 localStorage 中存储的主题在主题列表中的对应项
+    change.innerHTML = tmpElement.text; // 设置切换按钮显示文本
+    currentIndex = changeList.indexOf(tmpElement); // 更新当前主题索引
+    document.body.className = tmpElement.code; // 设置页面主题类名
+    localStorage.setItem('hexo-white-theme-mode', tmpElement.code); // 更新 localStorage 中的主题代码
+});
+
 
 ///////////////////////////////////////////////////////////////////////////////////
 
