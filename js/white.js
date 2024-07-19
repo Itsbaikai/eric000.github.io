@@ -33,6 +33,23 @@ mclose.onclick = function () {
     mmain.style.display = "none";
 }
 
+
+
+var mmenu = document.getElementById("mobile-menu");
+var mmain = document.getElementById("mobile-main");
+var mclose = document.getElementById("close-btn");
+
+
+mmenu.onclick = function () {
+    mmain.style.display = "flex"; // 显示菜单
+}
+
+mclose.onclick = function () {
+    mmain.style.display = "none"; // 隐藏菜单
+}
+
+
+
 // 获取主题切换按钮元素
 let change = document.getElementById("theme-change-btn");
 
@@ -146,4 +163,32 @@ function loadImg(el) {
 // onscroll()在滚动条滚动的时候触发
 window.onload = window.onscroll = function () {
     check();
+}
+
+// 获取模态框
+var modal = document.getElementById("wechatModal");
+
+// 获取关闭按钮
+var span = document.getElementsByClassName("close")[0];
+
+// 点击微信图标时打开模态框
+document.getElementById("wechat-link").onclick = function() {
+  modal.style.display = "block";
+}
+
+// 移动端点击微信图标时打开模态框
+document.getElementById("wechat-link-mobile").onclick = function() {
+  modal.style.display = "block";
+}
+
+// 点击关闭按钮时关闭模态框
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// 点击模态框外部时关闭模态框
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
