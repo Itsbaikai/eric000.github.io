@@ -21,84 +21,78 @@ for (let mlink of mlinks) {
     }
 }
 
-// 设置收起的menu点击的效果
-var mmenu = document.getElementById("mobile-menu");
-var mmain = document.getElementById("mobile-main");
-var mclose = document.getElementById("mobile-close");
-
-mmenu.onclick = function () {
-    mmain.style.display = "block";
-}
-mclose.onclick = function () {
-    mmain.style.display = "none";
-}
-
-
-
-var mmenu = document.getElementById("mobile-menu");
-var mmain = document.getElementById("mobile-main");
-var mclose = document.getElementById("close-btn");
-
-
-mmenu.onclick = function () {
-    mmain.style.display = "flex"; // 显示菜单
-}
-
-mclose.onclick = function () {
-    mmain.style.display = "none"; // 隐藏菜单
-}
-
-
-
-// 获取主题切换按钮元素
-let change = document.getElementById("theme-change-btn");
-
-// 定义主题列表
-let changeList = [
-    {
-        text: "白昼",
-        code: "day"
-    },
-    {
-        text: "午夜",
-        code: "night"
-    },
-    {
-        text: "饼干",
-        code: "cookie"
-    },
-    {
-        text: "森林",
-        code: "forest"
-    }
-];
-
-// 初始化当前主题索引
-var currentIndex = 0;
-
-// 设置切换按钮点击事件处理函数
-change.onclick = function () {
-    console.log("You clicked change theme button and currentIndex = " + currentIndex);
-
-    // 更新当前主题索引
-    currentIndex = (currentIndex + 1) % changeList.length;
-
-    // 更新按钮显示文本和页面主题类名
-    this.innerHTML = changeList[currentIndex].text;
-    document.body.className = changeList[currentIndex].code;
-
-    // 将当前主题代码存入 localStorage 中
-    localStorage.setItem('hexo-white-theme-mode', changeList[currentIndex].code);
-};
-
-// 初始化主题按钮显示文本、页面主题类名和 localStorage 中存储的主题代码
 document.addEventListener('DOMContentLoaded', function() {
+    // 获取元素
+    var mmenu = document.getElementById("mobile-menu");
+    var mmain = document.getElementById("mobile-main");
+    var mclose = document.getElementById("mobile-close");
+    let change = document.getElementById("theme-change-btn");
+
+    if (!mmenu || !mmain || !mclose || !change) {
+        console.error("One or more required elements are not found.");
+        return;
+    }
+
+    // 设置菜单点击效果
+    mmenu.onclick = function () {
+        mmain.style.display = "block";
+    }
+
+    mclose.onclick = function () {
+        mmain.style.display = "none";
+    }
+
+    // 定义主题列表
+    let changeList = [
+        {
+            text: "白昼",
+            code: "day"
+        },
+        {
+            text: "午夜",
+            code: "night"
+        },
+        {
+            text: "饼干",
+            code: "cookie"
+        },
+        {
+            text: "森林",
+            code: "forest"
+        }
+    ];
+
+    // 初始化当前主题索引
+    var currentIndex = 0;
+
+    // 设置主题切换按钮点击事件处理函数
+    change.onclick = function () {
+        console.log("You clicked change theme button and currentIndex = " + currentIndex);
+
+        // 更新当前主题索引
+        currentIndex = (currentIndex + 1) % changeList.length;
+
+        // 更新按钮显示文本和页面主题类名
+        this.innerHTML = changeList[currentIndex].text;
+        document.body.className = changeList[currentIndex].code;
+
+        // 将当前主题代码存入 localStorage 中
+        localStorage.setItem('hexo-white-theme-mode', changeList[currentIndex].code);
+    };
+
+    // 初始化主题按钮显示文本、页面主题类名和 localStorage 中存储的主题代码
     let beginCode = localStorage.getItem('hexo-white-theme-mode') || "cookie"; // 默认主题为 "cookie"
     let tmpElement = changeList.find(item => item.code === beginCode); // 查找 localStorage 中存储的主题在主题列表中的对应项
-    change.innerHTML = tmpElement.text; // 设置切换按钮显示文本
-    currentIndex = changeList.indexOf(tmpElement); // 更新当前主题索引
-    document.body.className = tmpElement.code; // 设置页面主题类名
-    localStorage.setItem('hexo-white-theme-mode', tmpElement.code); // 更新 localStorage 中的主题代码
+    if (tmpElement) {
+        change.innerHTML = tmpElement.text; // 设置切换按钮显示文本
+        currentIndex = changeList.indexOf(tmpElement); // 更新当前主题索引
+        document.body.className = tmpElement.code; // 设置页面主题类名
+    } else {
+        // 如果 localStorage 中的主题无效，则使用默认主题
+        change.innerHTML = changeList[currentIndex].text; // 设置按钮文本
+        document.body.className = changeList[currentIndex].code; // 设置页面主题类名
+    }
+    localStorage.setItem('hexo-white-theme-mode', document.body.className); // 更新 localStorage 中的主题代码
 });
 
 
@@ -163,32 +157,4 @@ function loadImg(el) {
 // onscroll()在滚动条滚动的时候触发
 window.onload = window.onscroll = function () {
     check();
-}
-
-// 获取模态框
-var modal = document.getElementById("wechatModal");
-
-// 获取关闭按钮
-var span = document.getElementsByClassName("close")[0];
-
-// 点击微信图标时打开模态框
-document.getElementById("wechat-link").onclick = function() {
-  modal.style.display = "block";
-}
-
-// 移动端点击微信图标时打开模态框
-document.getElementById("wechat-link-mobile").onclick = function() {
-  modal.style.display = "block";
-}
-
-// 点击关闭按钮时关闭模态框
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// 点击模态框外部时关闭模态框
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
 }

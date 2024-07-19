@@ -1,92 +1,148 @@
-var searchFunc = function(path, search_id, content_id) {
+function searchFunc(path, searchId, contentId) {
     'use strict';
     $.ajax({
         url: path,
-        dataType: "xml",
-        success: function( xmlResponse ) {
-            // get the contents from search data
-            var datas = $( "entry", xmlResponse ).map(function() {
+        dataType: 'xml',
+        success: function (xmlResponse) {
+            // 数据处理
+            var datas = $("entry", xmlResponse).map(function () {
                 return {
-                    title: $( "title", this ).text(),
-                    content: $("content",this).text(),
-                    url: $( "url" , this).text()
+                    title: $("title", this).text(),
+                    content: $("content", this).text(),
+                    url: $("url", this).text()
                 };
             }).get();
 
-            var $input = document.getElementById(search_id);
-            var $resultContent = document.getElementById(content_id);
+            var $input = document.getElementById(searchId);
+            var $resultContent = document.getElementById(contentId);
+            var $resultList = document.getElementById('search-results-list');
+            var $prevPage = document.getElementById('prev-page');
+            var $nextPage = document.getElementById('next-page');
+            var $searchContainer = document.getElementById('search-container');
+            var $form = document.getElementById('search-form');
 
-            $input.addEventListener('input', function(){
-                var str='<ul class=\"search-result-list\">';                
-                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                $resultContent.innerHTML = "";
-                if (this.value.trim().length <= 0) {
+            $form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                performSearch();
+            });
+
+            $input.addEventListener('input', function () {
+                performSearch();
+            });
+
+            function performSearch() {
+                var str = '';
+                var keywords = $input.value.trim().toLowerCase().split(/\s+/);
+                $resultContent.innerHTML = '<ul class="search-result-list"></ul>';
+                var resultList = $resultContent.firstChild;
+
+                if ($input.value.trim().length <= 0) {
                     return;
                 }
-                // perform local searching
-                datas.forEach(function(data) {
+
+                // 搜索功能
+                var count = 0;
+                datas.forEach(function (data) {
                     var isMatch = true;
                     var content_index = [];
                     var data_title = data.title.trim().toLowerCase();
-                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
                     var data_url = data.url;
                     var index_title = -1;
                     var index_content = -1;
                     var first_occur = -1;
-                    // only match artiles with not empty titles and contents
-                    if(data_title != '' && data_content != '') {
-                        keywords.forEach(function(keyword, i) {
+                    if (data_title !== '') {
+                        keywords.forEach(function (keyword, i) {
                             index_title = data_title.indexOf(keyword);
                             index_content = data_content.indexOf(keyword);
 
-                            if( index_title < 0 && index_content < 0 ){
+                            if (index_title < 0 && index_content < 0) {
                                 isMatch = false;
                             } else {
                                 if (index_content < 0) {
                                     index_content = 0;
                                 }
-                                if (i == 0) {
+                                if (i === 0) {
                                     first_occur = index_content;
                                 }
                             }
                         });
                     }
-                    // show search results
+
+                    // 匹配成功
                     if (isMatch) {
-                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g, "");
                         if (first_occur >= 0) {
-                            // cut out 100 characters
                             var start = first_occur - 20;
                             var end = first_occur + 80;
-
-                            if(start < 0){
+                            if (start < 0) {
                                 start = 0;
                             }
-
-                            if(start == 0){
+                            if (start === 0) {
                                 end = 100;
                             }
-                            if(end > content.length){
+                            if (end > content.length) {
                                 end = content.length;
                             }
-
-                            var match_content = content.substr(start, end); 
-
-                            // highlight all keywords
-                            keywords.forEach(function(keyword){
+                            var match_content = content.substr(start, end);
+                            keywords.forEach(function (keyword) {
                                 var regS = new RegExp(keyword, "gi");
-                                match_content = match_content.replace(regS, "<span class=\"search-keyword\">"+keyword+"</span>");
+                                match_content = match_content.replace(regS, "<span class='search-keyword'>" + keyword + "</span>");
                             });
-                            
-                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+
+                            str += "<p class='search-result'>" + match_content + "...</p>"
                         }
                         str += "</li>";
+                        count++;
                     }
                 });
-                str += "</ul>";
-                $resultContent.innerHTML = str;
-            });
+
+                resultList.innerHTML = str;
+                paginateResults(resultList);
+
+                // 将搜索框移到左上角
+                $searchContainer.classList.add('search-fixed');
+            }
+
+            function paginateResults(resultList) {
+                var items = $(resultList).find('li');
+                var numItems = items.length;
+                var perPage = 10;
+                var currentPage = 0;
+
+                items.slice(perPage).hide();
+
+                if (numItems > perPage) {
+                    $nextPage.disabled = false;
+                }
+
+                $prevPage.onclick = function () {
+                    if (currentPage > 0) {
+                        currentPage--;
+                        var start = currentPage * perPage;
+                        items.hide().slice(start, start + perPage).show();
+
+                        $nextPage.disabled = false;
+                        if (currentPage === 0) {
+                            $prevPage.disabled = true;
+                        }
+                    }
+                };
+
+                $nextPage.onclick = function () {
+                    if ((currentPage + 1) * perPage < numItems) {
+                        currentPage++;
+                        var start = currentPage * perPage;
+                        items.hide().slice(start, start + perPage).show();
+
+                        $prevPage.disabled = false;
+                        if ((currentPage + 1) * perPage >= numItems) {
+                            $nextPage.disabled = true;
+                        }
+                    }
+                };
+            }
         }
     });
 }
