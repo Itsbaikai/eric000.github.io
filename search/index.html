@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>   Blog</title>
+  <title>  搜索 -    Blog</title>
   <meta name="description" content="Recording tech blog">
   <!-- 标签页图标 -->
   
@@ -132,87 +132,42 @@
 
 <div class="body-outer">
   <div class="body-inner">
-    
-
-
-    <section class="simple-outer">
-    <section class="simple-inner common-typographic">
-        <div class="simple-post-list">
-            
-            
-                <div class="simple-post-item item-divider">
-                    <div class="simple-item-left">
-                        <div class="simple-item-meta">
-                            <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
-                            <div class="simple-meta-name">eric</div>
-                            <div class="simple-meta-date">发布于2024/07/18</div>
-                        </div>
-                        <a href="/eric000.github.io/2024/07/18/blog/">
-                            <div class="simple-post-title">
-                                
-                                    Markdown测试
-                                
-                            </div>
-                            <div class="simple-post-excerpt">
-                                
-                                    @TOC
-合理的创建标题，有助于目录的生成直接输入1次#，并按下space后，将生成1级标题。输入2次#，并按下space后，将生成2级标题。以此类推，我们支持6级标题。有助于使用TOC语法后生成一个完美的目录。
-如何改变文本的样式强调文本 强调文本...
-                                
-                            </div>
-                        </a>
+    <article class="post-inner">
+    <div class="post-content-outer">
+        <div class="post-intro"></div>
+        <div class="post-content-inner">
+            <div class="post-content-inner-space"></div>
+            <div class="post-content-main animate__animated animate__fadeInUp">
+                <div class="search" id="search-container">
+                    <div class="search-input-outer">
+                        <form id="search-form">
+                            <input type="text" placeholder="请输入想搜的内容..." id="local-search-input" name="q" results="0">
+                            <button type="submit"><i class="ri-search-line"></i></button>
+                        </form>
                     </div>
-                    
-                </div>
-            
-                <div class="simple-post-item item-divider">
-                    <div class="simple-item-left">
-                        <div class="simple-item-meta">
-                            <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
-                            <div class="simple-meta-name">eric</div>
-                            <div class="simple-meta-date">发布于2024/07/17</div>
+                    <div id="local-search-result">
+                        <div id="search-results-list"></div>
+                        <div id="search-pagination">
+                            <!-- <button id="prev-page" disabled>上一页</button>
+                            <button id="next-page" disabled>下一页</button> -->
                         </div>
-                        <a href="/eric000.github.io/2024/07/17/First-blog/">
-                            <div class="simple-post-title">
-                                
-                                    First_blog
-                                
-                            </div>
-                            <div class="simple-post-excerpt">
-                                
-                                    It is so cool
-
-                                
-                            </div>
-                        </a>
                     </div>
-                    
                 </div>
-            
+            </div>
+            <div class="post-content-inner-space"></div>
         </div>
-    </section>
-    
-        <nav class="paginator">
-            <ul>
-                
-                    <li><a href="/eric000.github.io/index.html">上一页</a></li>
-                
-                
-                    <li class="">
-                        <a href="/eric000.github.io/index.html">1</a>
-                    </li>
-                
-                    <li class="active">
-                        <a href="/eric000.github.io/page/2/index.html">2</a>
-                    </li>
-                
-                
-                
-            </ul>
-        </nav>
-    
-</section>
+    </div>
+</article>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+
+<script src="/eric000.github.io/js/search.js"></script>
+
+<script type="text/javascript">      
+    var search_path = "search.xml";
+    var path = "/eric000.github.io/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
 
   </div>
 </div>

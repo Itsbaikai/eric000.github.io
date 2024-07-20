@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>分类</title>
-      <link href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(2)/"/>
-      <url>/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(2)/</url>
-      
-        <content type="html"><![CDATA[<p>kind测试</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>text</title>
       <link href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(3)/"/>
       <url>/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(3)/</url>
@@ -181,11 +168,11 @@
     
     
     <entry>
-      <title>blog</title>
+      <title>Markdown测试</title>
       <link href="/eric000.github.io/2024/07/18/blog/"/>
       <url>/eric000.github.io/2024/07/18/blog/</url>
       
-        <content type="html"><![CDATA[<p>asdfesdafesdfrg</p>]]></content>
+        <content type="html"><![CDATA[<p>@<a href="%E8%BF%99%E9%87%8C%E5%86%99%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98">TOC</a></p><h2 id="合理的创建标题，有助于目录的生成"><a href="#合理的创建标题，有助于目录的生成" class="headerlink" title="合理的创建标题，有助于目录的生成"></a>合理的创建标题，有助于目录的生成</h2><p>直接输入1次<kbd>#</kbd>，并按下<kbd>space</kbd>后，将生成1级标题。<br>输入2次<kbd>#</kbd>，并按下<kbd>space</kbd>后，将生成2级标题。<br>以此类推，我们支持6级标题。有助于使用<code>TOC</code>语法后生成一个完美的目录。</p><h2 id="如何改变文本的样式"><a href="#如何改变文本的样式" class="headerlink" title="如何改变文本的样式"></a>如何改变文本的样式</h2><p><em>强调文本</em> <em>强调文本</em></p><p><strong>加粗文本</strong> <strong>加粗文本</strong></p><p>&#x3D;&#x3D;标记文本&#x3D;&#x3D;</p><p><del>删除文本</del></p><blockquote><p>引用文本</p></blockquote><h2 id="插入链接与图片"><a href="#插入链接与图片" class="headerlink" title="插入链接与图片"></a>插入链接与图片</h2><p>图片:         <span class="lazyload-img-span">        <img              data-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw" class="lazyload-img">        </sapn>      </p><p>居中的图片:         <span class="lazyload-img-span">        <img              data-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw#pic_center" class="lazyload-img">        </sapn>      </p><p>当然，我们为了让用户更加便捷，我们增加了图片拖拽功能。</p><h2 id="如何插入一段漂亮的代码片"><a href="#如何插入一段漂亮的代码片" class="headerlink" title="如何插入一段漂亮的代码片"></a>如何插入一段漂亮的代码片</h2><p>去<a href="https://mp.csdn.net/console/configBlog">博客设置</a>页面，选择一款你喜欢的代码片高亮样式，下面展示同样高亮的 <code>代码片</code>.</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// An highlighted block</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="string">&#x27;bar&#x27;</span>;</span><br></pre></td></tr></table></figure><h2 id="生成一个适合你的列表"><a href="#生成一个适合你的列表" class="headerlink" title="生成一个适合你的列表"></a>生成一个适合你的列表</h2><ul><li>项目<ul><li>项目<ul><li>项目</li></ul></li></ul></li></ul><ol><li>项目1</li><li>项目2</li><li>项目3</li></ol><ul><li><input disabled="" type="checkbox"> 计划任务</li><li><input checked="" disabled="" type="checkbox"> 完成任务</li></ul><h2 id="创建一个表格"><a href="#创建一个表格" class="headerlink" title="创建一个表格"></a>创建一个表格</h2><p>一个简单的表格是这么创建的：</p><table><thead><tr><th>项目</th><th>Value</th></tr></thead><tbody><tr><td>电脑</td><td>$1600</td></tr><tr><td>手机</td><td>$12</td></tr><tr><td>导管</td><td>$1</td></tr></tbody></table><h3 id="设定内容居中、居左、居右"><a href="#设定内容居中、居左、居右" class="headerlink" title="设定内容居中、居左、居右"></a>设定内容居中、居左、居右</h3><p>使用<code>:---------:</code>居中<br>使用<code>:----------</code>居左<br>使用<code>----------:</code>居右</p><table><thead><tr><th align="center">第一列</th><th align="right">第二列</th><th align="left">第三列</th></tr></thead><tbody><tr><td align="center">第一列文本居中</td><td align="right">第二列文本居右</td><td align="left">第三列文本居左</td></tr></tbody></table><h3 id="SmartyPants"><a href="#SmartyPants" class="headerlink" title="SmartyPants"></a>SmartyPants</h3><p>SmartyPants将ASCII标点字符转换为“智能”印刷标点HTML实体。例如：</p><table><thead><tr><th>TYPE</th><th>ASCII</th><th>HTML</th></tr></thead><tbody><tr><td>Single backticks</td><td><code>&#39;Isn&#39;t this fun?&#39;</code></td><td>‘Isn’t this fun?’</td></tr><tr><td>Quotes</td><td><code>&quot;Isn&#39;t this fun?&quot;</code></td><td>“Isn’t this fun?”</td></tr><tr><td>Dashes</td><td><code>-- is en-dash, --- is em-dash</code></td><td>– is en-dash, — is em-dash</td></tr></tbody></table>]]></content>
       
       
       

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>  分类 -    Blog</title>
+  <title>  关于 -    Blog</title>
   <meta name="description" content="Recording tech blog">
   <!-- 标签页图标 -->
   
@@ -132,76 +132,62 @@
 
 <div class="body-outer">
   <div class="body-inner">
-    
-  <div class="categories-card">
-    
-      <div class="card-item">
-        <div class="categories">
-          <a href="/eric000.github.io/categories/technology/">
-            <h3>
-              <i class="iconfont icon-category" style="padding-right:3px"></i>
-              Tech
-            </h3>
-          </a>
-          
-            
-              <article class="archive-item">
-                <a class="archive-item-link" href="/eric000.github.io/2024/07/19/My_first_blog/">My First Post</a>
-              </article>
-            
-          
+    <article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      
+      <div class="post-title">
+        关于
+      </div>
+      <div class="post-meta">
+        <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
+        <div class="post-meta-name">eric</div>
+        <div class="post-meta-date">发布于 2024/07/20</div>
+      </div>
+    </div>
+    <div class="post-content-inner common-typographic">
+      <div class="post-placeholder"></div>
+      <div class="post-content-main">
+        <div class="post-content">
+          <h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><p>这里是关于页面的内容，可以是自我介绍、联系方式等。</p>
+
         </div>
       </div>
-    
-      <div class="card-item">
-        <div class="categories">
-          <a href="/eric000.github.io/categories/Category1/">
-            <h3>
-              <i class="iconfont icon-category" style="padding-right:3px"></i>
-              Category1
-            </h3>
-          </a>
-          
-            
-              <article class="archive-item">
-                <a class="archive-item-link" href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(5)/">text</a>
-              </article>
-            
-              <article class="archive-item">
-                <a class="archive-item-link" href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(4)/">My Post</a>
-              </article>
-            
-              <article class="archive-item">
-                <a class="archive-item-link" href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(6)/">text</a>
-              </article>
-            
-          
-        </div>
+      <div class="post-placeholder post-toc-container">
+        <!-- toc -->
+        
+          <!-- tocbot -->
+<nav class="post-toc toc"></nav>
+
+        
       </div>
-    
-      <div class="card-item">
-        <div class="categories">
-          <a href="/eric000.github.io/categories/Category1/Category2/">
-            <h3>
-              <i class="iconfont icon-category" style="padding-right:3px"></i>
-              Category2
-            </h3>
-          </a>
-          
-            
-              <article class="archive-item">
-                <a class="archive-item-link" href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(5)/">text</a>
-              </article>
-            
-              <article class="archive-item">
-                <a class="archive-item-link" href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(4)/">My Post</a>
-              </article>
-            
-          
-        </div>
-      </div>
+   </div>
+
+    <!-- 评论 -->
     
   </div>
+</article>
+<!-- tocbot begin -->
+
+<script src="/eric000.github.io/lib/tocbot/tocbot.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.post-toc',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.post-content',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+    });
+
+</script>
+<!-- tocbot end -->
 
 
   </div>
