@@ -407,10 +407,13 @@ a {
 .footer-li:hover i {
   color: var(--color-text-main);
 }
-.categories-card {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+.card-item {
+  background: #f9f9f9;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
 }
 .card-item {
   padding: 15px;
