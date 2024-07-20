@@ -55,10 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             text: "饼干",
             code: "cookie"
-        },
-        {
-            text: "森林",
-            code: "forest"
         }
     ];
 
