@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>  搜索 -    Blog</title>
+  <title>   Blog</title>
   <meta name="description" content="Recording tech blog">
   <!-- 标签页图标 -->
   
@@ -24,6 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;700;900&family=Roboto+Mono&display=swap" rel="stylesheet">
 
 <meta name="generator" content="Hexo 7.3.0"></head>
+
 
 
 <body>
@@ -50,20 +51,14 @@
                     </li>
                 </a>
                 
-                <a href="/eric000.github.io/kinds" class="nav-link">
+                <a href="/eric000.github.io/categories" class="nav-link">
                     <li class="menu-li">
                         分类
                     </li>
                 </a>
                 
-
-                <!-- 新增分类链接 -->
-                <a href="/eric000.github.io/kind" class="nav-link">
-                    <li class="menu-li">
-                        分类
-                    </li>
-                </a>
-
+                
+                
                 <li class="menu-li" id="theme-change-btn">
                     默认
                 </li>
@@ -111,16 +106,24 @@
             </div>
         </a>
         
-        <a href="/eric000.github.io/kinds" class="mobile-nav-link">
+        <a href="/eric000.github.io/categories" class="mobile-nav-link">
             <div class="mobile-menu-child">
                 <span>分类</span>
             </div>
         </a>
         
-        <!-- 新增分类链接 -->
-        <a href="/eric000.github.io/kind" class="mobile-nav-link">
+        
+        <!-- 移动端分类链接 -->
+        <a href="/eric000.github.io/categories" class="mobile-nav-link">
             <div class="mobile-menu-child">
                 <span>分类</span>
+            </div>
+        </a>
+        
+        <!-- 移动端搜索图标 -->
+        <a href="/eric000.github.io/search" class="mobile-nav-link">
+            <div class="mobile-menu-child">
+                <i class="ri-search-line"></i>
             </div>
         </a>
     </div>
@@ -129,42 +132,90 @@
 
 <div class="body-outer">
   <div class="body-inner">
-    <article class="post-inner">
-    <div class="post-content-outer">
-        <div class="post-intro"></div>
-        <div class="post-content-inner">
-            <div class="post-content-inner-space"></div>
-            <div class="post-content-main animate__animated animate__fadeInUp">
-                <div class="search" id="search-container">
-                    <div class="search-input-outer">
-                        <form id="search-form">
-                            <input type="text" placeholder="请输入想搜的内容..." id="local-search-input" name="q" results="0">
-                            <button type="submit"><i class="ri-search-line"></i></button>
-                        </form>
-                    </div>
-                    <div id="local-search-result">
-                        <div id="search-results-list"></div>
-                        <div id="search-pagination">
-                            <!-- <button id="prev-page" disabled>上一页</button>
-                            <button id="next-page" disabled>下一页</button> -->
+    
+
+  <section class="simple-outer">
+    <section class="simple-inner common-typographic">
+        <div class="simple-post-list">
+            
+            
+                <div class="simple-post-item item-divider">
+                    <div class="simple-item-left">
+                        <div class="simple-item-meta">
+                            <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
+                            <div class="simple-meta-name">eric</div>
+                            <div class="simple-meta-date">发布于2024/07/19</div>
                         </div>
+                        <a href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(5)/">
+                            <div class="simple-post-title">
+                                
+                                    text
+                                
+                            </div>
+                            <div class="simple-post-excerpt">
+                                
+                                    
+                                
+                            </div>
+                        </a>
                     </div>
+                    
                 </div>
-            </div>
-            <div class="post-content-inner-space"></div>
+            
+                <div class="simple-post-item item-divider">
+                    <div class="simple-item-left">
+                        <div class="simple-item-meta">
+                            <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
+                            <div class="simple-meta-name">eric</div>
+                            <div class="simple-meta-date">发布于2024/07/19</div>
+                        </div>
+                        <a href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(6)/">
+                            <div class="simple-post-title">
+                                
+                                    text
+                                
+                            </div>
+                            <div class="simple-post-excerpt">
+                                
+                                    
+                                
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+            
+                <div class="simple-post-item item-divider">
+                    <div class="simple-item-left">
+                        <div class="simple-item-meta">
+                            <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
+                            <div class="simple-meta-name">eric</div>
+                            <div class="simple-meta-date">发布于2024/07/19</div>
+                        </div>
+                        <a href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(4)/">
+                            <div class="simple-post-title">
+                                
+                                    My Post
+                                
+                            </div>
+                            <div class="simple-post-excerpt">
+                                
+                                    
+                                
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+            
         </div>
-    </div>
-</article>
+    </section>
+    
+</section>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
 
-<script src="/eric000.github.io/js/search.js"></script>
 
-<script type="text/javascript">      
-    var search_path = "search.xml";
-    var path = "/eric000.github.io/" + search_path;
-    searchFunc(path, 'local-search-input', 'local-search-result');
-</script>
+
 
   </div>
 </div>

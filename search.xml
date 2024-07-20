@@ -4,24 +4,11 @@
   
     
     <entry>
-      <title>文章分类</title>
+      <title>分类</title>
       <link href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(2)/"/>
       <url>/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(2)/</url>
       
         <content type="html"><![CDATA[<p>kind测试</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>text</title>
-      <link href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(5)/"/>
-      <url>/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(5)/</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
       
       
@@ -44,11 +31,19 @@
     
     <entry>
       <title>text</title>
-      <link href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(6)/"/>
-      <url>/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(6)/</url>
+      <link href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(5)/"/>
+      <url>/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(5)/</url>
       
         <content type="html"><![CDATA[]]></content>
       
+      
+      <categories>
+          
+          <category> Category1 </category>
+          
+          <category> Category2 </category>
+          
+      </categories>
       
       
     </entry>
@@ -57,8 +52,27 @@
     
     <entry>
       <title>text</title>
-      <link href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(4)/"/>
-      <url>/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(4)/</url>
+      <link href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(6)/"/>
+      <url>/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(6)/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Category1 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>text</title>
+      <link href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC/"/>
+      <url>/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC/</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -72,19 +86,6 @@
       <title>text</title>
       <link href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(7)/"/>
       <url>/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(7)/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>text</title>
-      <link href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC/"/>
-      <url>/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC/</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -153,6 +154,27 @@
             <tag> Coding </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>My Post</title>
+      <link href="/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(4)/"/>
+      <url>/eric000.github.io/2024/07/19/text%20-%20%E5%89%AF%E6%9C%AC%20(4)/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Category1 </category>
+          
+          <category> Category2 </category>
+          
+      </categories>
+      
       
     </entry>
     
