@@ -216,8 +216,8 @@ a {
 }
 .menu-site-name,
 .mobile-menu-site-name {
-  margin-left: 100px;
   font-family: 'Noto Serif SC', serif;
+  margin-left: 100px;
   font-size: 1.9em;
 }
 .menu-site-name a {
@@ -284,45 +284,35 @@ a {
   display: flex;
   justify-content: center;
 }
-.intro-section {
-  width: 1500px;
+.intro {
+  text-align: center;
 }
-.intro-section .intro-content {
-  margin-top: 100px;
-  width: 60%;
+.intro .avatar {
+  padding: 10px;
 }
-.intro-section .intro-title {
-  font-family: 'Noto Serif SC', serif;
-  font-size: 4.5em;
-  font-weight: 1000;
-  margin: 0;
-  padding: 0;
+.intro .avatar img {
+  width: 128px;
+  height: auto;
+  display: inline-block;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 0 0 0.3618em rgba(0,0,0,0.05);
+  box-shadow: 0 0 0 0.3618em rgba(0,0,0,0.05);
+  margin: 0 auto;
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s;
+  cursor: pointer;
 }
-.intro-section .intro-sub {
-  font-family: 'Noto Serif SC', serif;
-  margin-top: 30px;
-  font-size: 1.32em;
-  line-height: 1.8em;
-  margin-left: 5px;
-}
-.intro-section .intro-contact {
-  margin-top: 10px;
-  font-size: 1.5em;
-  line-height: 1.8em;
-  margin-left: 5px;
-}
-.intro-section .intro-contact a {
-  color: var(--color-text-secondary);
-  transition: all 0.2s;
-}
-.intro-section .intro-contact a:hover {
-  color: var(--color-text-main);
-}
-.intro-section .intro-content,
-.intro-section a {
-  color: var(--color-text-main);
-  text-decoration: none;
-  margin-right: 3px;
+.intro .avatar img:hover {
+  position: relative;
+  -webkit-transform: translateY(-0.75em);
+  -moz-transform: translateY(-0.75em);
+  -ms-transform: translateY(-0.75em);
+  -o-transform: translateY(-0.75em);
+  transform: translateY(-0.75em);
+  cursor: pointer;
 }
 .paginator {
   margin: 50px 0;
@@ -407,16 +397,16 @@ a {
 .footer-li:hover i {
   color: var(--color-text-main);
 }
+.categories-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
 .card-item {
   background: #f9f9f9;
   border-radius: 5px;
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  flex: 1 1 calc(33.333% - 20px);
-  box-sizing: border-box;
-}
-.card-item {
-  padding: 15px;
   flex: 1 1 calc(33.333% - 20px);
   box-sizing: border-box;
 }
