@@ -132,72 +132,88 @@
 
 <div class="body-outer">
   <div class="body-inner">
-    
-  <div class="categories-card">
-    
-      <div class="card-item">
-        <div class="categories">
-          <a href="/eric000.github.io/categories/%E6%88%90%E9%95%BF/">
-            <h3>
-              <i class="iconfont icon-category" style="padding-right:3px"></i>
-              成长
-            </h3>
-          </a>
-          
-            
-              <article class="archive-item">
-                <a class="archive-item-link" href="/eric000.github.io/2024/07/19/1111/">7.15</a>
-              </article>
-            
-              <article class="archive-item">
-                <a class="archive-item-link" href="/eric000.github.io/2024/07/21/%E5%9B%A0%E6%9E%9C/">因果</a>
-              </article>
-            
+    <article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      
+      
+      
+      <div class="post-title">
+        
+      </div>
+      <div class="post-meta">
+        <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
+        <div class="post-meta-name">eric</div>
+        <div class="post-meta-date">发布于 2024/07/23</div>
+      </div>
+      
+    </div>
+    <div class="post-content-inner common-typographic">
+      <div class="post-placeholder"></div>
+      <div class="post-content-main">
+        <div class="post-content">
           
         </div>
       </div>
-    
-      <div class="card-item">
-        <div class="categories">
-          <a href="/eric000.github.io/categories/%E6%8A%80%E6%9C%AF/">
-            <h3>
-              <i class="iconfont icon-category" style="padding-right:3px"></i>
-              技术
-            </h3>
-          </a>
-          
-            
-              <article class="archive-item">
-                <a class="archive-item-link" href="/eric000.github.io/2024/07/20/text/">博客搭建过程</a>
-              </article>
-            
-              <article class="archive-item">
-                <a class="archive-item-link" href="/eric000.github.io/2024/07/26/%E8%B4%AA%E5%BF%83/">贪心算法</a>
-              </article>
-            
-          
-        </div>
+      <div class="post-placeholder post-toc-container">
+        <!-- toc -->
+        
       </div>
+    </div>
+
+    <!-- 评论 -->
     
-      <div class="card-item">
-        <div class="categories">
-          <a href="/eric000.github.io/categories/%E7%AC%94%E8%AF%95/">
-            <h3>
-              <i class="iconfont icon-category" style="padding-right:3px"></i>
-              笔试
-            </h3>
-          </a>
-          
-            
-              <article class="archive-item">
-                <a class="archive-item-link" href="/eric000.github.io/2024/07/27/%E7%AC%94%E8%AF%95%E9%94%99%E9%A2%98/">笔试错题</a>
-              </article>
-            
-          
-        </div>
+    <div class="bottom-comments-outer">
+      <div class="bottom-comments-inner common-typographic">
+        <h2 class="comment-title">评论</h2>
+        <!-- valine -->
+        
+        <!-- Gitalk -->
+        
+          <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container" style="margin-top: 100px;"></div>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'Ov23liaXqhJOc8b5PutV',
+        clientSecret: '522e3657ec1dee4fd4acd09d6ae6bcc257ab0fda',
+        id: window.location.pathname,
+        repo: 'eric000.github.io',
+        owner: 'Itsbaikai',
+        admin: 'Itsbaikai'
+    })
+    gitalk.render('gitalk-container')
+</script>
+        
+        <!-- livere -->
+        
+        
       </div>
+    </div>
     
   </div>
+</article>
+<!-- tocbot begin -->
+
+<script src="/eric000.github.io/lib/tocbot/tocbot.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.post-toc',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.post-content',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+    });
+
+</script>
+<!-- tocbot end -->
 
 
   </div>

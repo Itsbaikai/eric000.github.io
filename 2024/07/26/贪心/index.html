@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  贪心算法 -    Blog</title>
+  <meta name="description" content="Recording tech blog">
+  <!-- 标签页图标 -->
+  
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  
+
+  <!-- 图标库 -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- css文件 -->
+  
+<link rel="stylesheet" href="/eric000.github.io/css/white.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;700;900&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+
+<div class="menu-outer">
+    <div class="menu-inner">
+        <div class="menu-site-name">
+            <a href="/eric000.github.io/home">
+                Blog
+            </a>
+        </div>
+        <div class="menu-group">
+            <ul class="menu-ul">
+                
+                <a href="/eric000.github.io/" class="nav-link">
+                    <li class="menu-li">
+                        文章
+                    </li>
+                </a>
+                
+                <a href="/eric000.github.io/about" class="nav-link">
+                    <li class="menu-li">
+                        关于
+                    </li>
+                </a>
+                
+                <a href="/eric000.github.io/categories" class="nav-link">
+                    <li class="menu-li">
+                        分类
+                    </li>
+                </a>
+                
+                
+        
+
+                <li class="menu-li" id="theme-change-btn">
+                    默认
+                </li>
+                <li class="menu-li" id="mobile-menu">
+                    <i class="ri-menu-line"></i>
+                </li>
+                <!-- <li class="menu-li" id="mobile-close">
+                    <i class="ri-close-line"></i>
+                </li> -->
+                <!-- 新添加的搜索图标 -->
+                <li class="menu-li">
+                    <a href="/eric000.github.io/search" class="nav-link">
+                        <i class="ri-search-line"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--移动端-->
+<div id="mobile-main">
+    <div class="mobile-menu-inner">
+        <div class="mobile-menu-site-name">
+            <a href="/eric000.github.io/">
+                Blog
+            </a>
+        </div>
+        <div class="mobile-menu-group" id="mobile-close">
+            <i class="ri-close-line"></i>
+        </div>
+    </div>
+
+    <div class="mobile-menu-div">
+        
+        <a href="/eric000.github.io/" class="mobile-nav-link">
+            <div class="mobile-menu-child">
+                <span>文章</span>
+            </div>
+        </a>
+        
+        <a href="/eric000.github.io/about" class="mobile-nav-link">
+            <div class="mobile-menu-child">
+                <span>关于</span>
+            </div>
+        </a>
+        
+        <a href="/eric000.github.io/categories" class="mobile-nav-link">
+            <div class="mobile-menu-child">
+                <span>分类</span>
+            </div>
+        </a>
+        
+        
+        <!-- 移动端分类链接 -->
+        <a href="/eric000.github.io/categories" class="mobile-nav-link">
+            <div class="mobile-menu-child">
+                <span>分类</span>
+            </div>
+        </a>
+        
+        <!-- 移动端搜索图标 -->
+        <a href="/eric000.github.io/search" class="mobile-nav-link">
+            <div class="mobile-menu-child">
+                <i class="ri-search-line"></i>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+<div class="body-outer">
+  <div class="body-inner">
+    <article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      
+      
+      
+      <div class="post-title">
+        贪心算法
+      </div>
+      <div class="post-meta">
+        <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
+        <div class="post-meta-name">eric</div>
+        <div class="post-meta-date">发布于 2024/07/26</div>
+      </div>
+      
+    </div>
+    <div class="post-content-inner common-typographic">
+      <div class="post-placeholder"></div>
+      <div class="post-content-main">
+        <div class="post-content">
+          <h1 id="一文读懂贪心算法"><a href="#一文读懂贪心算法" class="headerlink" title="一文读懂贪心算法"></a>一文读懂贪心算法</h1><h2 id="概念及使用"><a href="#概念及使用" class="headerlink" title="概念及使用"></a>概念及使用</h2><p>贪心算法或贪心思想采用贪心的策略，保证每次操作都是<strong>局部最优</strong>，从而使最后得到的结果是<strong>全局最优</strong>的</p>
+<p>通常不使用回溯</p>
+<p><strong>适用条件：</strong><br>1.问题具有最优子结构性质：问题的最优解可以通过子问题的最优解推导得到。<br>2.贪心选择性质：每一步的选择都是当前状态下的最优解，即局部最优。</p>
+<p><strong>优缺点：</strong><br>优点： 算法简单、高效，适用于一些问题，尤其是最优子结构和贪心选择性质明显的情况。<br>缺点： 不适用于所有问题，可能得不到全局最优解，只能得到局部最优解或者近似最优解。</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="分配问题"><a href="#分配问题" class="headerlink" title="分配问题"></a>分配问题</h3><p>
+        <span class="lazyload-img-span">
+        <img   
+           data-src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/fenpei.jpg" class="lazyload-img">
+        </sapn>
+      </p>
+<p>解题思路：</p>
+<p>
+        <span class="lazyload-img-span">
+        <img   
+           data-src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/fenpeitijie.jpg" class="lazyload-img">
+        </sapn>
+      </p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">findContentChildren</span><span class="params">(<span class="type">int</span> g[], <span class="type">int</span> gSize, <span class="type">int</span> s[], <span class="type">int</span> sSize)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 对孩子的饥饿度和饼干的大小进行排序</span></span><br><span class="line">    <span class="built_in">sort</span>(g, g + gSize);</span><br><span class="line">    <span class="built_in">sort</span>(s, s + sSize);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> childIndex = <span class="number">0</span>; <span class="comment">// 孩子的索引</span></span><br><span class="line">    <span class="type">int</span> cookieIndex = <span class="number">0</span>; <span class="comment">// 饼干的索引</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 遍历饥饿度和饼干大小，尝试满足孩子</span></span><br><span class="line">    <span class="keyword">while</span> (childIndex &lt; gSize &amp;&amp; cookieIndex &lt; sSize) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s[cookieIndex] &gt;= g[childIndex]) &#123;</span><br><span class="line">            <span class="comment">// 当前饼干可以满足当前孩子的饥饿度</span></span><br><span class="line">            childIndex++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 无论是否满足孩子，饼干索引都需要移动</span></span><br><span class="line">        cookieIndex++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> childIndex; <span class="comment">// 最终满足的孩子数量</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> g[] = &#123;<span class="number">1</span>, <span class="number">2</span>&#125;; <span class="comment">// 孩子的饥饿度</span></span><br><span class="line">    <span class="type">int</span> s[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 饼干的大小</span></span><br><span class="line">    <span class="type">int</span> gSize = <span class="built_in">sizeof</span>(g) / <span class="built_in">sizeof</span>(g[<span class="number">0</span>]);</span><br><span class="line">    <span class="type">int</span> sSize = <span class="built_in">sizeof</span>(s) / <span class="built_in">sizeof</span>(s[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> result = <span class="built_in">findContentChildren</span>(g, gSize, s, sSize);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;最多有&quot;</span> &lt;&lt; result &lt;&lt; <span class="string">&quot;个孩子可以吃饱。&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="【深基12-例1】部分背包问题"><a href="#【深基12-例1】部分背包问题" class="headerlink" title="【深基12.例1】部分背包问题"></a>【深基12.例1】部分背包问题</h3><p>链接：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2240">https://www.luogu.com.cn/problem/P2240</a></p>
+<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>阿里巴巴走进了装满宝藏的藏宝洞。藏宝洞里面有 $N(N \le 100)$ 堆金币，第 $i$ 堆金币的总重量和总价值分别是 $m_i,v_i(1\le m_i,v_i \le 100)$。阿里巴巴有一个承重量为 $T(T \le 1000)$ 的背包，但并不一定有办法将全部的金币都装进去。他想装走尽可能多价值的金币。所有金币都可以随意分割，分割完的金币重量价值比（也就是单位价格）不变。请问阿里巴巴最多可以拿走多少价值的金币？</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行两个整数 $N,T$。</p>
+<p>接下来 $N$ 行，每行两个整数 $m_i,v_i$。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>一个实数表示答案，输出两位小数</p>
+<h4 id="样例-1"><a href="#样例-1" class="headerlink" title="样例 #1"></a>样例 #1</h4><h5 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 50</span><br><span class="line">10 60</span><br><span class="line">20 100</span><br><span class="line">30 120</span><br><span class="line">15 45</span><br></pre></td></tr></table></figure>
+
+<h5 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">240.00</span><br></pre></td></tr></table></figure>
+
+<p>解题思路：使用贪心算法那首先想到金币按照价值的高低排序，先装价值高的。又因为是可以分割的，可以知道应该以价格的单位价值为分类标准，所以在获取输入时候就可以把单位价值计算出来。<br>又因为金币的性质很多，所以用到结构体，排序用sort函数，定义compare。<br>那就循环遍历数组，依次累加价值，直到价值超过了背包。超过背包也不能直接return，要看是不是有剩余的价值（也就是拆开的金子）<br>最后就可以直接输出了 代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iomanip&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">GoldPile</span> &#123;</span><br><span class="line">    <span class="type">int</span> weight;</span><br><span class="line">    <span class="type">int</span> value;</span><br><span class="line">    <span class="type">double</span> unit_value;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">compare</span><span class="params">(GoldPile a, GoldPile b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.unit_value &gt; b.unit_value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> N, T;</span><br><span class="line">    cin &gt;&gt; N &gt;&gt; T;</span><br><span class="line"></span><br><span class="line">    GoldPile gold[N];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">        cin &gt;&gt; gold[i].weight &gt;&gt; gold[i].value;</span><br><span class="line">        gold[i].unit_value = (<span class="type">double</span>)gold[i].value / gold[i].weight;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">sort</span>(gold, gold + N, compare);</span><br><span class="line">    </span><br><span class="line">    <span class="type">double</span> max_value = <span class="number">0.0</span>;</span><br><span class="line">    <span class="type">int</span> current_weight = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N &amp;&amp; current_weight &lt; T; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (current_weight + gold[i].weight &lt;= T) &#123;</span><br><span class="line">            current_weight += gold[i].weight;</span><br><span class="line">            max_value += gold[i].value;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> remaining_weight = T - current_weight;</span><br><span class="line">            max_value += remaining_weight * gold[i].unit_value;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    cout &lt;&lt; fixed &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; max_value &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="凌乱的yyy-线段覆盖"><a href="#凌乱的yyy-线段覆盖" class="headerlink" title="凌乱的yyy &#x2F; 线段覆盖"></a>凌乱的yyy &#x2F; 线段覆盖</h3><p>links： <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1803">https://www.luogu.com.cn/problem/P1803</a></p>
+<h4 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h4><p>快 noip 了，yyy 很紧张！</p>
+<h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><p>现在各大 oj 上有 $n$ 个比赛，每个比赛的开始、结束的时间点是知道的。</p>
+<p>yyy 认为，参加越多的比赛，noip 就能考的越好（假的）。</p>
+<p>所以，他想知道他最多能参加几个比赛。</p>
+<p>由于 yyy 是蒟蒻，如果要参加一个比赛必须善始善终，而且不能同时参加 $2$ 个及以上的比赛。</p>
+<h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行是一个整数 $n$，接下来 $n$ 行每行是 $2$ 个整数 $a_{i},b_{i}\ (a_{i}&lt;b_{i})$，表示比赛开始、结束的时间。</p>
+<h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>一个整数最多参加的比赛数目。</p>
+<h4 id="样例-1-1"><a href="#样例-1-1" class="headerlink" title="样例 #1"></a>样例 #1</h4><h5 id="样例输入-1-1"><a href="#样例输入-1-1" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">0 2</span><br><span class="line">2 4</span><br><span class="line">1 3</span><br></pre></td></tr></table></figure>
+
+<h5 id="样例输出-1-1"><a href="#样例输出-1-1" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<h5 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h5><ul>
+<li>对于 $20%$ 的数据，$n \le 10$；</li>
+<li>对于 $50%$ 的数据，$n \le 10^3$；</li>
+<li>对于 $70%$ 的数据，$n \le 10^{5}$；</li>
+<li>对于 $100%$ 的数据，$1\le n \le 10^{6}$，$0 \le a_{i} &lt; b_{i} \le 10^6$。</li>
+</ul>
+<p>解题思路：思路很简单<br>以结束时间进行排序，再进行贪心。遍历每个比赛，如果当前比赛的开始时间大于上一个比赛的结束时间，那么就可以比了。<br>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 比赛结构体</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Event</span> &#123;</span><br><span class="line">    <span class="type">int</span> start;</span><br><span class="line">    <span class="type">int</span> end;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 比较函数，用于按结束时间排序</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">compare</span><span class="params">(Event a, Event b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.end &lt; b.end;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">    Event events[n];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输入比赛的开始和结束时间</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        cin &gt;&gt; events[i].start &gt;&gt; events[i].end;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 按结束时间排序</span></span><br><span class="line">    <span class="built_in">sort</span>(events, events + n, compare);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> count = <span class="number">0</span>;           <span class="comment">// 记录最多能参加的比赛数</span></span><br><span class="line">    <span class="type">int</span> last_end_time = <span class="number">-1</span>;  <span class="comment">// 记录上一个选中比赛的结束时间</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 贪心选择不重叠的比赛</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (events[i].start &gt;= last_end_time) &#123;</span><br><span class="line">            <span class="comment">// 选择当前比赛</span></span><br><span class="line">            count++;</span><br><span class="line">            last_end_time = events[i].end;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; count &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+        </div>
+      </div>
+      <div class="post-placeholder post-toc-container">
+        <!-- toc -->
+        
+          <!-- tocbot -->
+<nav class="post-toc toc"></nav>
+
+        
+      </div>
+    </div>
+
+    <!-- 评论 -->
+    
+    <div class="bottom-comments-outer">
+      <div class="bottom-comments-inner common-typographic">
+        <h2 class="comment-title">评论</h2>
+        <!-- valine -->
+        
+        <!-- Gitalk -->
+        
+          <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container" style="margin-top: 100px;"></div>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'Ov23liaXqhJOc8b5PutV',
+        clientSecret: '522e3657ec1dee4fd4acd09d6ae6bcc257ab0fda',
+        id: window.location.pathname,
+        repo: 'eric000.github.io',
+        owner: 'Itsbaikai',
+        admin: 'Itsbaikai'
+    })
+    gitalk.render('gitalk-container')
+</script>
+        
+        <!-- livere -->
+        
+        
+      </div>
+    </div>
+    
+  </div>
+</article>
+<!-- tocbot begin -->
+
+<script src="/eric000.github.io/lib/tocbot/tocbot.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.post-toc',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.post-content',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+    });
+
+</script>
+<!-- tocbot end -->
+
+
+  </div>
+</div>
+
+<!-- 如果是home模式的话，不在首页就显示footer，如果不是home模式的话 所有都显示footer -->
+
+  <div class="footer-outer animate__animated animate__fadeInUp">
+    <div class="footer-inner">
+        <div class="footer-text">
+            <p>By Eric</p>
+
+        </div>
+        <div class="footer-contact">
+            <ul class="footer-ul">
+                
+                <li class="footer-li">
+                    <a href="javascript:void(0);" target="_self" class="Wechat">
+                        <i class="ri-wechat-line"></i>
+                        
+                        <span class="tooltip-text">
+                            Unni_gxt
+                            <i class="ri-file-copy-line copy-icon" data-copytext="Unni_gxt"></i>
+                        </span>
+                        
+                    </a>
+                </li>
+                
+                <li class="footer-li">
+                    <a href="javascript:void(0);" target="_self" class="QQ">
+                        <i class="ri-qq-line"></i>
+                        
+                        <span class="tooltip-text">
+                            3423843516
+                            <i class="ri-file-copy-line copy-icon" data-copytext="3423843516"></i>
+                        </span>
+                        
+                    </a>
+                </li>
+                
+                <li class="footer-li">
+                    <a href="https://github.com/Itsbaikai/eric000.github.io" target="_blank" class="Github">
+                        <i class="ri-github-line"></i>
+                        
+                    </a>
+                </li>
+                
+                <li class="footer-li">
+                    <a href="mailto:unni_gxt@163.com" target="_blank" class="Email">
+                        <i class="ri-mail-line"></i>
+                        
+                        <span class="tooltip-text">
+                            unni_gxt@163.com
+                            <i class="ri-file-copy-line copy-icon" data-copytext="unni_gxt@163.com"></i>
+                        </span>
+                        
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+.footer-outer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* background-color: #f8f9fa; 可以根据需要调整 */
+    padding: 20px 0;
+    /* box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); 可以根据需要调整 */
+    z-index: 1000;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-text {
+    font-size: 14px;
+    color: #333;
+}
+
+.footer-ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-li {
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+}
+
+.footer-li a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+.footer-li .tooltip-text {
+    display: none;
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+.footer-li:hover .tooltip-text,
+.footer-li .tooltip-text.show {
+    display: block;
+}
+
+.copy-icon {
+    margin-left: 5px;
+    cursor: pointer;
+    color: inherit; /* 继承父元素的颜色 */
+}
+
+.copy-icon.copied {
+    color: #4caf50; /* 绿色表示成功 */
+}
+
+.copy-icon.failed {
+    color: #f44336; /* 红色表示失败 */
+}
+
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var footerLis = document.querySelectorAll('.footer-li');
+
+    footerLis.forEach(function(li) {
+        var tooltipText = li.querySelector('.tooltip-text');
+        var hideTimeout;
+
+        li.addEventListener('mouseover', function() {
+            clearTimeout(hideTimeout);
+            tooltipText.classList.add('show');
+        });
+
+        li.addEventListener('mouseout', function() {
+            hideTimeout = setTimeout(function() {
+                tooltipText.classList.remove('show');
+            }, 1000); // 1秒后隐藏
+        });
+    });
+
+    // 复制图标功能
+    var copyIcons = document.querySelectorAll('.copy-icon');
+    copyIcons.forEach(function(icon) {
+        icon.addEventListener('click', function() {
+            var textToCopy = this.getAttribute('data-copytext');
+            var originalClass = this.className;
+
+            navigator.clipboard.writeText(textToCopy).then(function() {
+                // 复制成功，修改图标样式
+                icon.classList.add('copied');
+                setTimeout(function() {
+                    icon.classList.remove('copied'); // 恢复原状
+                }, 1000); // 1秒后恢复
+            }, function(err) {
+                console.error('复制失败: ', err);
+                // 复制失败，修改图标样式
+                icon.classList.add('failed');
+                setTimeout(function() {
+                    icon.classList.remove('failed'); // 恢复原状
+                }, 1000); // 1秒后恢复
+            });
+        });
+    });
+});
+</script>
+
+
+
+
+
+
+<script src="/eric000.github.io/js/white.js"></script>
+
+
+
+</body>
+</html>
