@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>   Blog</title>
+  <title>  哈希两数之和 -    Blog</title>
   <meta name="description" content="Recording tech blog">
   <!-- 标签页图标 -->
   
@@ -132,97 +132,104 @@
 
 <div class="body-outer">
   <div class="body-inner">
-    
+    <article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      
+      
+      
+      <div class="post-title">
+        哈希两数之和
+      </div>
+      <div class="post-meta">
+        <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
+        <div class="post-meta-name">eric</div>
+        <div class="post-meta-date">发布于 2024/08/12</div>
+      </div>
+      
+    </div>
+    <div class="post-content-inner common-typographic">
+      <div class="post-placeholder"></div>
+      <div class="post-content-main">
+        <div class="post-content">
+          <p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。</p>
+<p>示例 1：<br><br>输入：<br>nums &#x3D; [2,7,11,15], target &#x3D; 9<br><br>输出：<br>[0,1]<br><br>解释：<br>因为 nums[0] + nums[1] &#x3D;&#x3D; 9 ，返回 [0, 1] 。<br><br><br>示例 2：<br><br>输入：<br>nums &#x3D; [3,2,4], target &#x3D; 6<br><br>输出：<br>[1,2]<br><br><br>示例 3：<br><br>输入：<br><br>nums &#x3D; [3,3], target &#x3D; 6<br>输出：<br>[0,1]<br><br><em>解题思路</em>：</p>
+<p>
+        <span class="lazyload-img-span">
+        <img   
+           data-src="https://i-blog.csdnimg.cn/direct/fea80c0efe074f58afa445c4a92b90fd.png" class="lazyload-img">
+        </sapn>
+      </p>
+<br>
+ht[target-v]返回的是target-v位置的索引
 
-  <section class="simple-outer">
-    <section class="simple-inner common-typographic">
-        <div class="simple-post-list">
-            
-            
-                <div class="simple-post-item item-divider">
-                    <div class="simple-item-left">
-                        <div class="simple-item-meta">
-                            <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
-                            <div class="simple-meta-name">eric</div>
-                            <div class="simple-meta-date">发布于2024/08/12</div>
-                        </div>
-                        <a href="/eric000.github.io/2024/08/12/%E5%93%88%E5%B8%8C%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">
-                            <div class="simple-post-title">
-                                
-                                    哈希两数之和
-                                
-                            </div>
-                            <div class="simple-post-excerpt">
-                                
-                                    给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
-你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
-你可以按任意顺序返...
-                                
-                            </div>
-                        </a>
-                    </div>
-                    
-                </div>
-            
-                <div class="simple-post-item item-divider">
-                    <div class="simple-item-left">
-                        <div class="simple-item-meta">
-                            <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
-                            <div class="simple-meta-name">eric</div>
-                            <div class="simple-meta-date">发布于2024/08/04</div>
-                        </div>
-                        <a href="/eric000.github.io/2024/08/04/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E23%E6%A0%A1%E6%8B%9B%E7%A0%94%E5%8F%91%E7%B1%BB%EF%BC%88C++%E7%AC%AC%E4%B8%80%E3%80%81%E4%B8%89%E9%81%93%E9%A2%98%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81%EF%BC%89%E7%AC%AC%E4%BA%8C%E9%81%93%E9%A2%98%E6%B1%82%E5%8A%A9-%E5%9B%BE%E5%83%8F%E5%8F%A0%E5%8A%A0%E3%80%81%E4%B8%96%E7%95%8C%E6%9D%AF%E7%A7%AF%E5%88%86%E9%97%AE%E9%A2%98%E3%80%81%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/">
-                            <div class="simple-post-title">
-                                
-                                    研发类
-                                
-                            </div>
-                            <div class="simple-post-excerpt">
-                                
-                                    1. 图像叠加
-在图像应用程序中经常要将2个图层进行叠加，从而产生各种瑰丽的合成效果。现在请你实现常见的线性光叠加模式。
-线性光叠加模式公式：C &#x3D; A + 2B - 255；C &lt; 0 时，取 C &#x3D; 0；C &gt; 2...
-                                
-                            </div>
-                        </a>
-                    </div>
-                    
-                </div>
-            
-                <div class="simple-post-item item-divider">
-                    <div class="simple-item-left">
-                        <div class="simple-item-meta">
-                            <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
-                            <div class="simple-meta-name">eric</div>
-                            <div class="simple-meta-date">发布于2024/07/27</div>
-                        </div>
-                        <a href="/eric000.github.io/2024/07/27/%E7%AC%94%E8%AF%95%E9%94%99%E9%A2%98/">
-                            <div class="simple-post-title">
-                                
-                                    笔试错题
-                                
-                            </div>
-                            <div class="simple-post-excerpt">
-                                
-                                    1.HTTPS协议通过使用哪些机制来确保通信的安全性（）
-A 加密和身份验证
-2.ETag用于标识资源的唯一标识符，它可以用于（）
-A 验证资源是否发生变化
-3.系统中现有一个任务进程在11:30到达系统，如果在14:30开始运行这个任务进程，其运行...
-                                
-                            </div>
-                        </a>
-                    </div>
-                    
-                </div>
-            
+<p>用map存键和值，值是索引，键是数组的值</p>
+<p>如果能找到，就返回索引对。</p>
+<p><em>代码如下</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>,<span class="type">int</span>&gt; ht;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt; nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="type">int</span> v = nums[i];</span><br><span class="line">            <span class="keyword">if</span>(ht.<span class="built_in">count</span>(target - v))&#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;i,ht[target-v]&#125;;            </span><br><span class="line">            &#125;</span><br><span class="line">            ht[v] =i; </span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
         </div>
-    </section>
+      </div>
+      <div class="post-placeholder post-toc-container">
+        <!-- toc -->
+        
+      </div>
+    </div>
+
+    <!-- 评论 -->
     
-</section>
+    <div class="bottom-comments-outer">
+      <div class="bottom-comments-inner common-typographic">
+        <h2 class="comment-title">评论</h2>
+        <!-- valine -->
+        
+        <!-- Gitalk -->
+        
+          <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container" style="margin-top: 100px;"></div>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'Ov23liaXqhJOc8b5PutV',
+        clientSecret: '522e3657ec1dee4fd4acd09d6ae6bcc257ab0fda',
+        id: window.location.pathname,
+        repo: 'eric000.github.io',
+        owner: 'Itsbaikai',
+        admin: 'Itsbaikai'
+    })
+    gitalk.render('gitalk-container')
+</script>
+        
+        <!-- livere -->
+        
+        
+      </div>
+    </div>
+    
+  </div>
+</article>
+<!-- tocbot begin -->
 
+<script src="/eric000.github.io/lib/tocbot/tocbot.min.js"></script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
 
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.post-toc',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.post-content',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+    });
+
+</script>
+<!-- tocbot end -->
 
 
   </div>

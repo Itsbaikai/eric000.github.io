@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>   Blog</title>
+  <title>  Cities and States S--Map二维映射（C++完整代码） -    Blog</title>
   <meta name="description" content="Recording tech blog">
   <!-- 标签页图标 -->
   
@@ -132,97 +132,128 @@
 
 <div class="body-outer">
   <div class="body-inner">
-    
+    <article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      
+      
+      
+      <div class="post-title">
+        Cities and States S--Map二维映射（C++完整代码）
+      </div>
+      <div class="post-meta">
+        <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
+        <div class="post-meta-name">eric</div>
+        <div class="post-meta-date">发布于 2024/08/04</div>
+      </div>
+      
+    </div>
+    <div class="post-content-inner common-typographic">
+      <div class="post-placeholder"></div>
+      <div class="post-content-main">
+        <div class="post-content">
+          <h2 id="USACO16DEC-Cities-and-States-S"><a href="#USACO16DEC-Cities-and-States-S" class="headerlink" title="[USACO16DEC] Cities and States S"></a>[USACO16DEC] Cities and States S</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>Farmer John 有若干头奶牛。为了训练奶牛们的智力，Farmer John 在谷仓的墙上放了一张美国地图。地图上表明了每个城市及其所在州的代码（前两位大写字母）。</p>
+<p>由于奶牛在谷仓里花了很多时间看这张地图，他们开始注意到一些奇怪的关系。例如，FLINT 的前两个字母就是 MIAMI 所在的 FL 州，MIAMI 的前两个字母则是 FLINT 所在的 MI 州。</p>
+<p>确切地说，对于两个城市，它们的前两个字母互为对方所在州的名称。我们称两个城市是一个一对「特殊」的城市，如果他们具有上面的特性，并且来自不同的州。对于总共 N 座城市，奶牛想知道有多少对「特殊」的城市存在。请帮助他们解决这个有趣的地理难题！</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入共 N + 1 行。第一行一个正整数 N，表示地图上的城市的个数。接下来 N 行，每行两个字符串，分别表示一个城市的名称（2 ∼ 10 个大写字母）和所在州的代码（2 个大写字母）。同一个州内不会有两个同名的城市。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出共一行一个整数，代表特殊的城市对数。</p>
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">6 MIAMI FL DALLAS TX FLINT MI CLEMSON SC BOSTON MA ORLANDO FL</span><br><span class="line"></span><br><span class="line">1</span><br></pre></td></tr></table></figure>
 
-  <section class="simple-outer">
-    <section class="simple-inner common-typographic">
-        <div class="simple-post-list">
-            
-            
-                <div class="simple-post-item item-divider">
-                    <div class="simple-item-left">
-                        <div class="simple-item-meta">
-                            <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
-                            <div class="simple-meta-name">eric</div>
-                            <div class="simple-meta-date">发布于2024/08/12</div>
-                        </div>
-                        <a href="/eric000.github.io/2024/08/12/%E5%93%88%E5%B8%8C%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">
-                            <div class="simple-post-title">
-                                
-                                    哈希两数之和
-                                
-                            </div>
-                            <div class="simple-post-excerpt">
-                                
-                                    给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
-你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
-你可以按任意顺序返...
-                                
-                            </div>
-                        </a>
-                    </div>
-                    
-                </div>
-            
-                <div class="simple-post-item item-divider">
-                    <div class="simple-item-left">
-                        <div class="simple-item-meta">
-                            <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
-                            <div class="simple-meta-name">eric</div>
-                            <div class="simple-meta-date">发布于2024/08/04</div>
-                        </div>
-                        <a href="/eric000.github.io/2024/08/04/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E23%E6%A0%A1%E6%8B%9B%E7%A0%94%E5%8F%91%E7%B1%BB%EF%BC%88C++%E7%AC%AC%E4%B8%80%E3%80%81%E4%B8%89%E9%81%93%E9%A2%98%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81%EF%BC%89%E7%AC%AC%E4%BA%8C%E9%81%93%E9%A2%98%E6%B1%82%E5%8A%A9-%E5%9B%BE%E5%83%8F%E5%8F%A0%E5%8A%A0%E3%80%81%E4%B8%96%E7%95%8C%E6%9D%AF%E7%A7%AF%E5%88%86%E9%97%AE%E9%A2%98%E3%80%81%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/">
-                            <div class="simple-post-title">
-                                
-                                    研发类
-                                
-                            </div>
-                            <div class="simple-post-excerpt">
-                                
-                                    1. 图像叠加
-在图像应用程序中经常要将2个图层进行叠加，从而产生各种瑰丽的合成效果。现在请你实现常见的线性光叠加模式。
-线性光叠加模式公式：C &#x3D; A + 2B - 255；C &lt; 0 时，取 C &#x3D; 0；C &gt; 2...
-                                
-                            </div>
-                        </a>
-                    </div>
-                    
-                </div>
-            
-                <div class="simple-post-item item-divider">
-                    <div class="simple-item-left">
-                        <div class="simple-item-meta">
-                            <img src="https://raw.githubusercontent.com/Itsbaikai/eric000.github.io/main/images/touxiang.jpg">
-                            <div class="simple-meta-name">eric</div>
-                            <div class="simple-meta-date">发布于2024/07/27</div>
-                        </div>
-                        <a href="/eric000.github.io/2024/07/27/%E7%AC%94%E8%AF%95%E9%94%99%E9%A2%98/">
-                            <div class="simple-post-title">
-                                
-                                    笔试错题
-                                
-                            </div>
-                            <div class="simple-post-excerpt">
-                                
-                                    1.HTTPS协议通过使用哪些机制来确保通信的安全性（）
-A 加密和身份验证
-2.ETag用于标识资源的唯一标识符，它可以用于（）
-A 验证资源是否发生变化
-3.系统中现有一个任务进程在11:30到达系统，如果在14:30开始运行这个任务进程，其运行...
-                                
-                            </div>
-                        </a>
-                    </div>
-                    
-                </div>
-            
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>数据规模与约定：对于 100% 的数据，1 ≤ N ≤ 2 × 10^5，城市名称长度不超过 10。</p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>先把多个字母的 a 只取前两个字母，只有当前缀和州名不同的时候才处理。</p>
+<ol>
+<li><a href="command:_github.copilot.openSymbolFromReferences?%5B%22st%5Ba%20%2B%20b%5D%2B%2B%3B%22%2C%5B%7B%22uri%22%3A%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2FUsers%2Fggxxtt%2FDownloads%2Fhexo%2Fblog%2Fsource%2F_posts%2FCities.md%22%2C%22external%22%3A%22file%3A%2F%2F%2FUsers%2Fggxxtt%2FDownloads%2Fhexo%2Fblog%2Fsource%2F_posts%2FCities.md%22%2C%22path%22%3A%22%2FUsers%2Fggxxtt%2FDownloads%2Fhexo%2Fblog%2Fsource%2F_posts%2FCities.md%22%2C%22scheme%22%3A%22file%22%7D%2C%22pos%22%3A%7B%22line%22%3A52%2C%22character%22%3A2%7D%7D%5D%5D" title="Go to definition"><code>st[a + b]++;</code></a> 将城市前缀 a 和州名 b 组合起来作为键，记录或更新该组合出现的次数。</li>
+<li><a href="command:_github.copilot.openSymbolFromReferences?%5B%22ans%20%2B%3D%20st%5Bb%20%2B%20a%5D%3B%22%2C%5B%7B%22uri%22%3A%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2FUsers%2Fggxxtt%2FDownloads%2Fhexo%2Fblog%2Fsource%2F_posts%2FCities.md%22%2C%22external%22%3A%22file%3A%2F%2F%2FUsers%2Fggxxtt%2FDownloads%2Fhexo%2Fblog%2Fsource%2F_posts%2FCities.md%22%2C%22path%22%3A%22%2FUsers%2Fggxxtt%2FDownloads%2Fhexo%2Fblog%2Fsource%2F_posts%2FCities.md%22%2C%22scheme%22%3A%22file%22%7D%2C%22pos%22%3A%7B%22line%22%3A53%2C%22character%22%3A2%7D%7D%5D%5D" title="Go to definition"><code>ans += st[b + a];</code></a> 检查是否有反向组合 b + a 已经存在，若存在则将其计数加到 ans 中。</li>
+</ol>
+<h3 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h3><pre><code class="cpp">// C++ 代码示例
+#include &lt;iostream&gt;
+#include &lt;unordered_map&gt;
+using namespace std;
+
+int main() &#123;
+    int N;
+    cin &gt;&gt; N;
+    unordered_map&lt;string, int&gt; st;
+    int ans = 0;
+
+    for (int i = 0; i &lt; N; i++) &#123;
+        string city, state;
+        cin &gt;&gt; city &gt;&gt; state;
+        string prefix = city.substr(0, 2);
+        st[prefix + state]++;
+        ans += st[state + prefix];
+    &#125;
+
+    cout &lt;&lt; ans &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+
         </div>
-    </section>
+      </div>
+      <div class="post-placeholder post-toc-container">
+        <!-- toc -->
+        
+          <!-- tocbot -->
+<nav class="post-toc toc"></nav>
+
+        
+      </div>
+    </div>
+
+    <!-- 评论 -->
     
-</section>
+    <div class="bottom-comments-outer">
+      <div class="bottom-comments-inner common-typographic">
+        <h2 class="comment-title">评论</h2>
+        <!-- valine -->
+        
+        <!-- Gitalk -->
+        
+          <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container" style="margin-top: 100px;"></div>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'Ov23liaXqhJOc8b5PutV',
+        clientSecret: '522e3657ec1dee4fd4acd09d6ae6bcc257ab0fda',
+        id: window.location.pathname,
+        repo: 'eric000.github.io',
+        owner: 'Itsbaikai',
+        admin: 'Itsbaikai'
+    })
+    gitalk.render('gitalk-container')
+</script>
+        
+        <!-- livere -->
+        
+        
+      </div>
+    </div>
+    
+  </div>
+</article>
+<!-- tocbot begin -->
 
+<script src="/eric000.github.io/lib/tocbot/tocbot.min.js"></script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
 
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.post-toc',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.post-content',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+    });
+
+</script>
+<!-- tocbot end -->
 
 
   </div>

@@ -4,6 +4,120 @@
   
     
     <entry>
+      <title>做对的事，不是把事情做对</title>
+      <link href="/eric000.github.io/2024/08/18/%E5%81%9A%E5%AF%B9%E7%9A%84%E4%BA%8B/"/>
+      <url>/eric000.github.io/2024/08/18/%E5%81%9A%E5%AF%B9%E7%9A%84%E4%BA%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="最近心态转变"><a href="#最近心态转变" class="headerlink" title="最近心态转变"></a>最近心态转变</h2><p>之前我很喜欢听一些心态或生活方面的经验与感悟，容易与他人产生共鸣。现在我更喜欢了解一些自己未曾接触过的知识盲区。虽然无法彻底理解其中的深奥文化，但感受他人的心得总能带来不一样的体验。</p><h2 id="01-学习总结"><a href="#01-学习总结" class="headerlink" title="01 学习总结"></a>01 学习总结</h2><p>我使用了三个插件：</p><ol><li>主题</li><li>快速语音笔记</li><li>自动注释的 C++ 插件</li></ol><p>        <span class="lazyload-img-span">        <img              data-src="https://mmbiz.qpic.cn/sz_mmbiz_png/ekGqWs6vZmQUpmwGTrydHvfw4Hz40mpBN6w2wic5hGbLNHC1BibVq02ibObTDAAsHCpqqYnBjYJhnLF0h0RB1GzDg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload-img">        </sapn>      <br>        <span class="lazyload-img-span">        <img              data-src="https://mmbiz.qpic.cn/sz_mmbiz_png/ekGqWs6vZmQUpmwGTrydHvfw4Hz40mpBiarAdXInubeFTLLozjvOlVGBFlckNia548qxF3IFPpgsxibUnRlj8Im7Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload-img">        </sapn>      </p><h2 id="02-认知"><a href="#02-认知" class="headerlink" title="02 认知"></a>02 认知</h2><p>我体会到赚钱其实是在赚信息差。很喜欢一句话：人生就像是一块块拼图，你可能只是随便丢下了几块拼图，但某一天不知不觉中你会发现某一块区域已经拼好了。这句话生动地表达了前进的意义，当下的努力是为未来的道路播种。</p><h2 id="03-最后"><a href="#03-最后" class="headerlink" title="03 最后"></a>03 最后</h2><p>不要失去输出内容的能力。内心获得很多感受，想给他人提供正反馈，却只能哑巴吃黄莲。有时候与他人共享想法能够获得双倍的价值。</p><p>        <span class="lazyload-img-span">        <img              data-src="https://mmbiz.qpic.cn/sz_mmbiz/ekGqWs6vZmQUpmwGTrydHvfw4Hz40mpBhJ48gOG7vhogNYibTU59FIn9mfQfhZvJibLjc47nqIsWmc2cIzyfTvIA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload-img">        </sapn>      </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 成长 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>哈希两数之和</title>
+      <link href="/eric000.github.io/2024/08/12/%E5%93%88%E5%B8%8C%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
+      <url>/eric000.github.io/2024/08/12/%E5%93%88%E5%B8%8C%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
+      
+        <content type="html"><![CDATA[<p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。</p><p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p><p>你可以按任意顺序返回答案。</p><p>示例 1：<br><br>输入：<br>nums &#x3D; [2,7,11,15], target &#x3D; 9<br><br>输出：<br>[0,1]<br><br>解释：<br>因为 nums[0] + nums[1] &#x3D;&#x3D; 9 ，返回 [0, 1] 。<br><br><br>示例 2：<br><br>输入：<br>nums &#x3D; [3,2,4], target &#x3D; 6<br><br>输出：<br>[1,2]<br><br><br>示例 3：<br><br>输入：<br><br>nums &#x3D; [3,3], target &#x3D; 6<br>输出：<br>[0,1]<br><br><em>解题思路</em>：</p><p>        <span class="lazyload-img-span">        <img              data-src="https://i-blog.csdnimg.cn/direct/fea80c0efe074f58afa445c4a92b90fd.png" class="lazyload-img">        </sapn>      </p><br>ht[target-v]返回的是target-v位置的索引<p>用map存键和值，值是索引，键是数组的值</p><p>如果能找到，就返回索引对。</p><p><em>代码如下</em></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>,<span class="type">int</span>&gt; ht;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt; nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="type">int</span> v = nums[i];</span><br><span class="line">            <span class="keyword">if</span>(ht.<span class="built_in">count</span>(target - v))&#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;i,ht[target-v]&#125;;            </span><br><span class="line">            &#125;</span><br><span class="line">            ht[v] =i; </span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>如何制作动图链接</title>
+      <link href="/eric000.github.io/2024/08/10/%E5%88%B6%E4%BD%9C%E5%8A%A8%E5%9B%BE%E9%93%BE%E6%8E%A5/"/>
+      <url>/eric000.github.io/2024/08/10/%E5%88%B6%E4%BD%9C%E5%8A%A8%E5%9B%BE%E9%93%BE%E6%8E%A5/</url>
+      
+        <content type="html"><![CDATA[<p>1.打开网站</p><ul><li>Find &amp; Share on GIPHY</li></ul><p>2.注册登陆</p><p>3.点击右上角的upload<br>        <span class="lazyload-img-span">        <img              data-src="https://i-blog.csdnimg.cn/direct/f096efcf988a41348086b7cc357d75da.png" class="lazyload-img">        </sapn>      <br>4.上传gif或者mp4或者mov<br>        <span class="lazyload-img-span">        <img              data-src="https://i-blog.csdnimg.cn/direct/6dd9b7e17d6944488683ea9f11588029.png" class="lazyload-img">        </sapn>      <br>5.修改配置后点击continue<br>        <span class="lazyload-img-span">        <img              data-src="https://i-blog.csdnimg.cn/direct/09910a6f9c8f477a838fed5fc975842e.png" class="lazyload-img">        </sapn>      <br>6.点击upload<br>        <span class="lazyload-img-span">        <img              data-src="https://i-blog.csdnimg.cn/direct/4faa61f02db44efb9d035d2c6a3915f6.png" class="lazyload-img">        </sapn>      </p><p>7.点击share后选择 copy gif link<br>        <span class="lazyload-img-span">        <img              data-src="https://i-blog.csdnimg.cn/direct/4171233fe07543ea9c707133d92f7e78.png" class="lazyload-img">        </sapn>      </p><ol start="8"><li>打开vscode</li></ol><p>在vscode中这么使用即可</p><p>        <span class="lazyload-img-span">        <img              data-src="https://i-blog.csdnimg.cn/direct/d7887d8beaf74f88ac1573feba0d57ef.png" class="lazyload-img">        </sapn>      </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vscode插件图标显示</title>
+      <link href="/eric000.github.io/2024/08/08/Vscode%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%A0%87%E6%98%BE%E7%A4%BA/"/>
+      <url>/eric000.github.io/2024/08/08/Vscode%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%A0%87%E6%98%BE%E7%A4%BA/</url>
+      
+        <content type="html"><![CDATA[<p>首先在ts文件目录下和package.json同级的目录下加入一张图片，后缀是jpg、png、jpeg都可以。</p><p>然后package.json中加入该行<br>        <span class="lazyload-img-span">        <img              data-src="https://i-blog.csdnimg.cn/direct/e5a3e34dd14f41b5987f3e2a4b457352.png" class="lazyload-img">        </sapn>      </p><p>重新</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vsce package</span><br></pre></td></tr></table></figure><p>即可</p><p>如果出现报错</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The specified icon &#x27;xxx/xxx/icon.jpg&#x27; wasn&#x27;t found in the extension.</span><br></pre></td></tr></table></figure><p>那就是没有放正确文件夹的位置</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Cities and States S--Map二维映射（C++完整代码）</title>
+      <link href="/eric000.github.io/2024/08/04/Cities/"/>
+      <url>/eric000.github.io/2024/08/04/Cities/</url>
+      
+        <content type="html"><![CDATA[<h2 id="USACO16DEC-Cities-and-States-S"><a href="#USACO16DEC-Cities-and-States-S" class="headerlink" title="[USACO16DEC] Cities and States S"></a>[USACO16DEC] Cities and States S</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>Farmer John 有若干头奶牛。为了训练奶牛们的智力，Farmer John 在谷仓的墙上放了一张美国地图。地图上表明了每个城市及其所在州的代码（前两位大写字母）。</p><p>由于奶牛在谷仓里花了很多时间看这张地图，他们开始注意到一些奇怪的关系。例如，FLINT 的前两个字母就是 MIAMI 所在的 FL 州，MIAMI 的前两个字母则是 FLINT 所在的 MI 州。</p><p>确切地说，对于两个城市，它们的前两个字母互为对方所在州的名称。我们称两个城市是一个一对「特殊」的城市，如果他们具有上面的特性，并且来自不同的州。对于总共 N 座城市，奶牛想知道有多少对「特殊」的城市存在。请帮助他们解决这个有趣的地理难题！</p><h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入共 N + 1 行。第一行一个正整数 N，表示地图上的城市的个数。接下来 N 行，每行两个字符串，分别表示一个城市的名称（2 ∼ 10 个大写字母）和所在州的代码（2 个大写字母）。同一个州内不会有两个同名的城市。</p><h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出共一行一个整数，代表特殊的城市对数。</p><h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">6 MIAMI FL DALLAS TX FLINT MI CLEMSON SC BOSTON MA ORLANDO FL</span><br><span class="line"></span><br><span class="line">1</span><br></pre></td></tr></table></figure><h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>数据规模与约定：对于 100% 的数据，1 ≤ N ≤ 2 × 10^5，城市名称长度不超过 10。</p><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>先把多个字母的 a 只取前两个字母，只有当前缀和州名不同的时候才处理。</p><ol><li><a href="command:_github.copilot.openSymbolFromReferences?%5B%22st%5Ba%20%2B%20b%5D%2B%2B%3B%22%2C%5B%7B%22uri%22%3A%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2FUsers%2Fggxxtt%2FDownloads%2Fhexo%2Fblog%2Fsource%2F_posts%2FCities.md%22%2C%22external%22%3A%22file%3A%2F%2F%2FUsers%2Fggxxtt%2FDownloads%2Fhexo%2Fblog%2Fsource%2F_posts%2FCities.md%22%2C%22path%22%3A%22%2FUsers%2Fggxxtt%2FDownloads%2Fhexo%2Fblog%2Fsource%2F_posts%2FCities.md%22%2C%22scheme%22%3A%22file%22%7D%2C%22pos%22%3A%7B%22line%22%3A52%2C%22character%22%3A2%7D%7D%5D%5D" title="Go to definition"><code>st[a + b]++;</code></a> 将城市前缀 a 和州名 b 组合起来作为键，记录或更新该组合出现的次数。</li><li><a href="command:_github.copilot.openSymbolFromReferences?%5B%22ans%20%2B%3D%20st%5Bb%20%2B%20a%5D%3B%22%2C%5B%7B%22uri%22%3A%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2FUsers%2Fggxxtt%2FDownloads%2Fhexo%2Fblog%2Fsource%2F_posts%2FCities.md%22%2C%22external%22%3A%22file%3A%2F%2F%2FUsers%2Fggxxtt%2FDownloads%2Fhexo%2Fblog%2Fsource%2F_posts%2FCities.md%22%2C%22path%22%3A%22%2FUsers%2Fggxxtt%2FDownloads%2Fhexo%2Fblog%2Fsource%2F_posts%2FCities.md%22%2C%22scheme%22%3A%22file%22%7D%2C%22pos%22%3A%7B%22line%22%3A53%2C%22character%22%3A2%7D%7D%5D%5D" title="Go to definition"><code>ans += st[b + a];</code></a> 检查是否有反向组合 b + a 已经存在，若存在则将其计数加到 ans 中。</li></ol><h3 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h3><pre><code class="cpp">// C++ 代码示例#include &lt;iostream&gt;#include &lt;unordered_map&gt;using namespace std;int main() &#123;    int N;    cin &gt;&gt; N;    unordered_map&lt;string, int&gt; st;    int ans = 0;    for (int i = 0; i &lt; N; i++) &#123;        string city, state;        cin &gt;&gt; city &gt;&gt; state;        string prefix = city.substr(0, 2);        st[prefix + state]++;        ans += st[state + prefix];    &#125;    cout &lt;&lt; ans &lt;&lt; endl;    return 0;&#125;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>研发类</title>
+      <link href="/eric000.github.io/2024/08/04/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E23%E6%A0%A1%E6%8B%9B%E7%A0%94%E5%8F%91%E7%B1%BB%EF%BC%88C++%E7%AC%AC%E4%B8%80%E3%80%81%E4%B8%89%E9%81%93%E9%A2%98%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81%EF%BC%89%E7%AC%AC%E4%BA%8C%E9%81%93%E9%A2%98%E6%B1%82%E5%8A%A9-%E5%9B%BE%E5%83%8F%E5%8F%A0%E5%8A%A0%E3%80%81%E4%B8%96%E7%95%8C%E6%9D%AF%E7%A7%AF%E5%88%86%E9%97%AE%E9%A2%98%E3%80%81%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
+      <url>/eric000.github.io/2024/08/04/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E23%E6%A0%A1%E6%8B%9B%E7%A0%94%E5%8F%91%E7%B1%BB%EF%BC%88C++%E7%AC%AC%E4%B8%80%E3%80%81%E4%B8%89%E9%81%93%E9%A2%98%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81%EF%BC%89%E7%AC%AC%E4%BA%8C%E9%81%93%E9%A2%98%E6%B1%82%E5%8A%A9-%E5%9B%BE%E5%83%8F%E5%8F%A0%E5%8A%A0%E3%80%81%E4%B8%96%E7%95%8C%E6%9D%AF%E7%A7%AF%E5%88%86%E9%97%AE%E9%A2%98%E3%80%81%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<p><strong>1. 图像叠加</strong></p><p>在图像应用程序中经常要将2个图层进行叠加，从而产生各种瑰丽的合成效果。现在请你实现常见的线性光叠加模式。</p><p>线性光叠加模式公式：C &#x3D; A + 2B - 255；C &lt; 0 时，取 C &#x3D; 0；C &gt; 255 时，取 C &#x3D; 255。</p><p>在公式中 A 代表下面图层的颜色值，也称为基色；B 代表上面图层的颜色值，也成为混合色；C 代表混合图层的颜色值，也称为结果色。</p><p>时间限制：C&#x2F;C++ 1秒，其他语言2秒<br>空间限制：C&#x2F;C++ 256M，其他语言512M  </p><p><strong>输入描述：</strong><br>第一行输入2个数字 M N，表示输入图片的大小（M、N 小于 1024）。<br>之后输入 M 行数据为 A 图像的数据内容，每行 N 个数字，表示该行的像素值。<br>之后继续输入 M 行数据为 B 图像的数据内容，每行 N 个数字，表示该行的像素值。  </p><p><strong>输出描述：</strong><br>M 行数据，每行 N 个数字，表示结果图片像素值。</p><p><strong>示例1</strong><br>输入例子：<br><br>2 2 100 200 50 50 50 50 100 100</p><p>输出例子：<br><br>0 45 0 0</p><p><strong>示例2</strong><br>输入例子：<br><br>2 3 23 172 238 238 174 151 22 117 230 230 237 141</p><p>输出例子：<br><br>0 151 255 255 255 178</p><p><strong>代码如下：</strong></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> M, N;</span><br><span class="line"><span class="type">int</span> a[<span class="number">1024</span>][<span class="number">1024</span>];</span><br><span class="line"><span class="type">int</span> b[<span class="number">1024</span>][<span class="number">1024</span>];</span><br><span class="line"><span class="type">int</span> res[<span class="number">1024</span>][<span class="number">1024</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; M &gt;&gt; N;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; M; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; N; j++) &#123;</span><br><span class="line">            cin &gt;&gt; a[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; M; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; N; j++) &#123;</span><br><span class="line">            cin &gt;&gt; b[i][j];</span><br><span class="line">            res[i][j] = a[i][j] + <span class="number">2</span> * b[i][j] - <span class="number">255</span>;</span><br><span class="line">            <span class="keyword">if</span> (res[i][j] &lt; <span class="number">0</span>) res[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (res[i][j] &gt; <span class="number">255</span>) res[i][j] = <span class="number">255</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; M; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; N; j++) &#123;</span><br><span class="line">            cout &lt;&lt; res[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="2"><li>直角三角形的个数</li></ol><p>二维平面直角坐标系中有 N 个整型坐标点 (x1, y1), (x2, y2), …, (xN, yN)，任意三个点都可能构成一个三角形，计算这些三角形中直角三角形的个数。</p><p>时间限制：C&#x2F;C++ 1秒，其他语言2秒<br>空间限制：C&#x2F;C++ 32M，其他语言64M</p><p>输入描述：<br>输入有两行：<br>第一行为 N，3 ≤ N ≤ 256。<br>第二行为输入 N 个双字节整型坐标点，共 2N 个数据，以空格分隔横纵坐标及不同的点，x1 y1 x2 y2 … xn yn… xN yN。</p><p>输出描述：<br>输出直角三角形个数。</p><p>示例1<br>输入例子：<br><br>20<br>0 0 0 3 1 2 3 4 5 6 7 8 1 4 2 4 3 5 5 0 5 5 2 0 2 2 3 0 3 3 4 5 6 1 3 7 4 0 5 2</p><p>输出例子：<br><br>165</p><p><em>代码如下：</em></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> N, cnt = <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> x[<span class="number">256</span>];</span><br><span class="line"><span class="type">int</span> y[<span class="number">256</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">distSquared</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (x[i] - x[j]) * (x[i] - x[j]) + (y[i] - y[j]) * (y[i] - y[j]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; N;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">        cin &gt;&gt; x[i] &gt;&gt; y[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; N; j++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = j + <span class="number">1</span>; k &lt; N; k++) &#123;</span><br><span class="line">                <span class="type">int</span> a2 = <span class="built_in">distSquared</span>(i, j);</span><br><span class="line">                <span class="type">int</span> b2 = <span class="built_in">distSquared</span>(j, k);</span><br><span class="line">                <span class="type">int</span> c2 = <span class="built_in">distSquared</span>(k, i);</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// Check if it forms a right triangle</span></span><br><span class="line">                <span class="keyword">if</span> (a2 + b2 == c2 || a2 + c2 == b2 || b2 + c2 == a2) &#123;</span><br><span class="line">                    cnt++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; cnt;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>笔试错题</title>
       <link href="/eric000.github.io/2024/07/27/%E7%AC%94%E8%AF%95%E9%94%99%E9%A2%98/"/>
       <url>/eric000.github.io/2024/07/27/%E7%AC%94%E8%AF%95%E9%94%99%E9%A2%98/</url>
